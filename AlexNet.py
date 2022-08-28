@@ -3,7 +3,6 @@
 # 开发时间： 2022/8/28 16:32
 import torch
 import torch.nn as nn
-from torchinfo import summary
 
 
 class AlexNet(nn.Module):
@@ -39,13 +38,3 @@ class AlexNet(nn.Module):
         out = self.classifier(x)
         return out
 
-
-def test():
-    net = AlexNet()
-    y = net(torch.randn(1, 3, 224, 224))
-    print(y.size())
-    summary(net, (1, 3, 224, 224))
-
-
-if __name__ == '__main__':
-    test()
